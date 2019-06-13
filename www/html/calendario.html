@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../estilos/fonts.css">
+    <link rel="stylesheet" href="../estilos/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Mi iglesia</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="menu-bar">
+            <a href="#" class="bt"><span class="icon-menu"></span>Bella Vista</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><span class="icon-home"></span>Inicio</a></li>
+                <li><a href="#"><span class="icon-calendar"></span>Eventos</a></li>
+                <li><a href="../html/pedidos.html"><span class="icon-list-alt"></span>Pedidos</a></li>
+                <li><a href="https://www.youtube.com/channel/UCEzb0F__c9zgpbNCcoIQY8Q/videos?view_as=subscriber"><span
+                            class="icon-book"></span>Predicaciones</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1JKwwY_moKyzM3ubhHfZjD1Dd5W1J2GQR"><span
+                            class="icon-wrench"></span>Otros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="calendario">
+        <img id="img" src="" />
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA5fWI3ac7ncJ433q51OopIVZK-vvjmi58",
+            authDomain: "pruebaf-909d7.firebaseapp.com",
+            databaseURL: "https://pruebaf-909d7.firebaseio.com",
+            projectId: "pruebaf-909d7",
+            storageBucket: "pruebaf-909d7.appspot.com",
+            messagingSenderId: "226170586897"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+
+        var db = firebase.firestore();
+        var perRef = db.collection("herramientas");
+        perRef.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                $("#img").attr("src", doc.data().link);
+            });
+        }).catch(function (error) {
+            console.log("Error: ", error + " pasaron cosas");
+        });
+
+    </script>
+    <script>
+        alert("Para ver mejor el calendario, active la vista horizontal");
+    </script>
+
+    <script src="../main.js"></script>
+</body>
+
+</html>

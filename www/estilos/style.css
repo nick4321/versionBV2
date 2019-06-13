@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url(../imagenes/fondo1.jpeg);
+  color: white;
+  background-position: center;
+}
+
+header {
+  width: 100%;
+}
+
+header nav {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  background: rgba(0, 0, 0, 0.596);
+}
+
+.menu-bar {
+  display: none;
+}
+
+header nav ul {
+  overflow: hidden;
+  list-style: none;
+}
+
+header nav ul li {
+  float: left;
+}
+
+header nav ul li a {
+  color: #fff;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
+
+header nav ul span {
+  margin-right: 10px;
+}
+
+header nav ul li a:hover {
+  background: rgba(0, 0, 0, 0.596);
+}
+
+section {
+  padding: 20px;
+}
+
+body #lista li{
+  padding-bottom: 2em;
+}
+
+@media screen and (max-width:800px) {
+
+
+  header nav {
+    width: 80%;
+    height: 100%;
+    left: -100%;
+    margin: 0px;
+    position: fixed;
+  }
+  header nav ul li {
+    display: block;
+    float: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.596);
+  }
+  .menu-bar {
+    display: block;
+    width: 100%;
+    background: #ccc;
+    cursor: pointer;
+  }
+  .menu-bar .bt {
+    display: block;
+    padding: 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .menu-bar span {
+    float: right;
+    font-size: 40px;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.botones {
+  justify-content: flex-start;
+}
+
+.calendario {
+  display: flex;
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.calendario #img {
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.saludo {
+  background-color: rgba(0, 0, 0, 0.733);
+}
+
+body #lista {
+  background-color: rgba(0, 0, 0, 0.733);
+  list-style: none;
+}
+
+body #lista li{
+  padding-bottom: 2em;
+}
+
+.acciones #field #pedido {
+  width: 50%;
+}
+
+.acciones #field #msj {
+  width: 50%;
+}
+
+body #reflexion {
+  background-color: rgba(0, 0, 0, 0.733);
+  list-style: none;
+}
+
+input {
+  color: #4c4c4c;
+  background: #ffffff;
+  border: 2px solid #9b9b9b;
+  padding: 10px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+h1{
+  text-align: center;
+  color: black;
+}
